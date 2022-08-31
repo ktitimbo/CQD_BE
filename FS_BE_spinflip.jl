@@ -213,7 +213,6 @@ else
     print("Choose a defined field configuration for the inner rotation chamber \n") 
 end
 
-
 ## FUNCTION TO ESTIMATE THE FINAL POLAR ANGLES FOR ELECTRON AND NUCLEUS
 # theta_eF and theta_nF for a given initial condition (sweeps across Iwire)
 function get_FS_run(tspan, u0_i, p_i)
@@ -239,7 +238,6 @@ function get_FS_run(tspan, u0_i, p_i)
 
     return the_f_i, thn_f_i, phe_f_i, phn_f_i
 end
-
 
 # For each initial atom configuration (theta_e0, phi_e0, theta_n0, phi_n0)
 # Find (theta_nF, theta_eF, phi_eF, phi_nF) over all wire currents
