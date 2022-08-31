@@ -26,7 +26,7 @@ t_start = Dates.now()
 field = "quadrupole" # options: quadrupole OR exact
 distri = "hs" # options: hs (heart-shape) OR iso (isotropic) OR avg (5*pi/8)
 N_sampling = 10000  ; # total number of thn0,phn0 pairs
-const tiny_angle = 1e-6;    # 1e-12 gives errors
+const tiny_angle = 1e-6;    # less than this gives errors
 filename = "FS_spinflip_"*string(N_sampling)*"_"*string(Dates.format(Dates.now(), "yyyymmddTHHMMSS")) # filename
 ###################################
 
@@ -37,7 +37,7 @@ abstol=1e-10 ; # absolute tolerance
 maxiters=1000000000000 ;
 dtmin=1e-40 ; # minimum time step (old 1e-23 )
 force_dtmin = true ;
-alg = radau() ; # algorithm -- radau() seems to work well
+alg = radau() ; # algorithm -- radau()
 
 ## PHYSICAL CONSTANTS from NIST
 # RSU : Relative Standard Uncertainty
@@ -134,7 +134,7 @@ phn0_list = phn_iso(N_sampling);
 if field=="exact"
     the0 = 0 ; # initial theta_n0 (close but not equal to 0 unless additional steps taken to avoid cot(0))
     print("theta_e0 = 0 (exact field)  \n") 
-elseif field=="quadrupole"  # Majorana assumes flipped when entering quadrupole (flip normally from main field)
+elseif field=="quadrupole"  # Majorana assumes flipped when entering quadrupole due to full adiabatic rotation (flip normally from main field)
     the0 = pi ;    # initial theta_n0 (close but not equal to 0 unless additional steps taken to avoid cot(pi))
     print("theta_e0 = pi (quadrupole field) \n") 
 end
