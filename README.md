@@ -1,5 +1,7 @@
 # Numerical modeling of the multi-stage Stern–Gerlach experiment by Frisch and Segrè using co-quantum dynamics via the Bloch equation
 
+## Numerical computation of the fraction of spin flip in the Frisch-Segrè experiment using co-quantum dynamics theory
+
 August, 2022
 
 ### Authors
